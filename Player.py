@@ -10,13 +10,13 @@ class Player:
 
     def set_speed(self, direction: str):
         if direction == 'up':
-            self.y_speed = -self.max_speed
+            self.y_speed = +self.max_speed
         elif direction == 'down':
-            self.y_speed = self.max_speed
+            self.y_speed = -self.max_speed
         elif direction == 'left':
             self.x_speed = -self.max_speed
         elif direction == 'right':
-            self.x_speed = self.max_speed
+            self.x_speed = +self.max_speed
 
     def reset_speed(self, direction: str):
         if direction in ['up', 'down']:

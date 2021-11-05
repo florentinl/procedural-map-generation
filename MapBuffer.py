@@ -1,5 +1,5 @@
 from PixelMap import PixelMap
-import pygame
+import numpy
 
 
 class MapBuffer:
@@ -12,11 +12,11 @@ class MapBuffer:
         self.pixel_map.generate_view(round(self.view_x), 
                                      round(self.view_y))
 
-    def get_surface(self, x: float, y: float) -> pygame.Surface:
+    def get_view(self, x: float, y: float) -> numpy.ndarray:
         view = self.pixel_map.get_view(round(self.view_x),
                                        round(self.view_y),
                                        round(x),
                                        round(y))
         self.view_x = x
         self.view_y = y
-        return pygame.surfarray.make_surface(view)
+        return view

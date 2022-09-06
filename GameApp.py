@@ -59,7 +59,7 @@ class MapGame(Widget):
 
     def update(self, dt):
         self.player.update_position(dt)
-        self.refresh_texture() 
+        self.refresh_texture()
         self.canvas.clear()
         with self.canvas:
             Rectangle(texture = self.texture, pos=(0,0), size = (601,601))
@@ -70,18 +70,15 @@ class MapGame(Widget):
 
 
 class MapApp(App):
-    def build(self):  
+    def build(self):
         game = MapGame()
         game.init_game()
         Clock.schedule_interval(game.update, 1.0 / FPS)
         return game
 
 
-
-MapApp().run()
-
-
-
+if __name__ == '__main__':
+    MapApp().run()
 
 # default_font = pygame.font.get_default_font()
 # font_renderer = pygame.font.Font(default_font, 45)
@@ -119,9 +116,9 @@ MapApp().run()
 
 #             if event.key == pygame.K_d:
 #                 player.set_speed('right')
-        
+
 #         if event.type == pygame.KEYUP:
-            
+
 #             if event.key == pygame.K_z:
 #                 player.reset_speed('up')
 
@@ -141,5 +138,5 @@ MapApp().run()
 #     displaysurface.blit(view.get_surface(player.x, player.y), (0, 0))
 #     displaysurface.blit(mask, (0,0))
 #     displaysurface.blit(label, label.get_rect())
-    
+
 #     pygame.display.update()
